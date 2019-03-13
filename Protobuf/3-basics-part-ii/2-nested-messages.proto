@@ -1,0 +1,55 @@
+// this syntax for this proto is proto3
+syntax = "proto3";
+
+/* Person is used to identify users
+ * across our system*/
+message Person {
+    // the age as of the Person creation
+    int32 age = 1;
+    // the first name as documented in the sign up form
+    string first_name = 2;
+    // the last name as documented in the sign up form
+    string last_name = 3;
+    // small picture represents a small.jpg file
+    byte small_picture = 4;
+    bool is_verified = 5;
+    // height of a person in cms
+    float height = 6;
+
+    // a list of phone number is optional to provide at signup
+    repeated string phone_number = 7;
+
+    // we currently consider only 4 eye color
+    enum EyeColor {
+        UNKNOWN_EYE_COLOR = 1;
+        EYE_BROW = 2;
+        EYE_GREEN = 3;
+        EYE_BLUE = 4;
+        EYE_BLACK = 5;
+    }
+    // its an enum defined above
+    EyeColor eye_color = 8;
+
+    // Person's birthday
+    Date birthday = 9;
+
+    message Address {
+        string address_line_1 = 1;
+        string address_line_2 = 2;
+        string zip_code = 3;
+        string city = 4;
+        string country = 5;
+    }
+    
+    // Person's adresses
+    repeated Address addresses = 10;
+}
+
+message Date {
+    // Year of a date must be from 1 to 9999, or 0 if spesified a date without year,
+    int32 year = 1;
+    // Month of a year must be spesified 1 to 12
+    int32 month = 2;
+    // Date of a month must be from 1 to 31 for the year and month, or if spesified a year/month where the day is not significant
+    int32 date = 3;
+}

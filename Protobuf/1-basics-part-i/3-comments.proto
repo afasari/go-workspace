@@ -1,0 +1,21 @@
+// this syntax for this proto is proto3
+syntax = "proto3";
+
+/* Person is used to identify users
+ * across our system*/
+message Person {
+    // the age as of the Person creation
+    int32 age = 1;
+    // the first name as documented in the sign up form
+    string first_name = 2;
+    // the last name as documented in the sign up form
+    string last_name = 3;
+    // small picture represents a small.jpg file
+    byte small_picture = 4;
+    bool is_verified = 5;
+    // height of a person in cms
+    float height = 6;
+
+    // a list of phone number is optional to provide at signup
+    repeated string phone_number = 7;
+}
