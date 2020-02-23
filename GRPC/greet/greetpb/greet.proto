@@ -1,4 +1,4 @@
-syntax = "proto3";
+wsyntax = "proto3";
 
 package greet;
 option go_package = "greetpb";

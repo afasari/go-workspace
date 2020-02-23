@@ -16,14 +16,13 @@ import (
 
 func main() {
 	fmt.Println("Hello I'm a Client")
-	cc, err := grpc.Dial("localhost:50051", grpc.WithInsecure())
+	cc, err := grpc.Dial("localhost:50052", grpc.WithInsecure())
 	if err != nil {
 		log.Fatalf("could not connect: %v", err)
 	}
 	defer cc.Close()
 
 	c := calculatorpb.NewCalculatorServiceClient(cc)
-	// fmt.Printf("Created Client: %f", c)
 
 	// doUnary(c)
 

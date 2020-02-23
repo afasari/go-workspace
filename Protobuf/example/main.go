@@ -2,25 +2,57 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
-	"log"
-
-	"github.com/afasari/go-workspace/Protobuf/example/src/complex"
-
-	"github.com/afasari/go-workspace/Protobuf/example/src/enum"
-	"github.com/afasari/go-workspace/Protobuf/example/src/simple"
+	complexpb "github.com/afasari/go-workspace/Protobuf/example/src/complex"
+	enumpb "github.com/afasari/go-workspace/Protobuf/example/src/enum"
+	simplepb "github.com/afasari/go-workspace/Protobuf/example/src/simple"
+	addresspb "github.com/afasari/go-workspace/Protobuf/example/src/address"
 	"github.com/golang/protobuf/jsonpb"
 	"github.com/golang/protobuf/proto"
+	"github.com/golang/protobuf/ptypes/timestamp"
+	"io/ioutil"
+	"log"
+	"time"
 )
 
 func main() {
 	sm := doSimple()
-	// readAndWriteDemo(sm)
+	readAndWriteDemo(sm)
 	jsonDemo(sm)
-
 	doEnum()
-
 	doComplex()
+
+	readAndWritePerson()
+
+}
+
+func readAndWritePerson() {
+	fmt.Println("[Start of Person]")
+	now := time.Now()
+	person := addresspb.Person{
+		Name:                 "Kim Tae Yeon",
+		Id:                   1,
+		Email:                "tayeon@smentertainment.com",
+		Phones:               []*addresspb.Person_PhoneNumber{
+			{
+				Number: "085741310446",
+				Type: addresspb.Person_MOBILE,
+			},
+		},
+		LastUpdated:          &timestamp.Timestamp{
+			Seconds:              now.Unix(),
+			Nanos:                int32(now.Nanosecond()),
+		},
+	}
+
+	addressBook := &addresspb.AddressBook{
+		People:               []*addresspb.Person{&person},
+	}
+
+	writeToFile("address.bin", addressBook)
+	pm2 := &addresspb.AddressBook{}
+	readFromFile("address.bin", pm2)
+	fmt.Println("Read the content", pm2)
+	fmt.Println("[End of Person]")
 }
 
 func doComplex() {

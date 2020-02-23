@@ -8,11 +8,12 @@ import (
 	"math"
 	"net"
 
+	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
+	"google.golang.org/grpc/reflection"
 	"google.golang.org/grpc/status"
 
 	"github.com/afasari/go-workspace/GRPC/calculator/calculatorpb"
-	"google.golang.org/grpc"
 )
 
 type server struct{}
@@ -111,12 +112,15 @@ func (*server) SquareRoot(ctx context.Context, req *calculatorpb.SquareRootReque
 func main() {
 	fmt.Printf("Calculator Server\n")
 
-	lis, err := net.Listen("tcp", "0.0.0.0:50051")
+	lis, err := net.Listen("tcp", "0.0.0.0:50052")
 	if err != nil {
 		log.Fatalf("Failed to listen: %v", err)
 	}
 	s := grpc.NewServer()
 	calculatorpb.RegisterCalculatorServiceServer(s, &server{})
+
+	// register reflection service on grpc server
+	reflection.Register(s)
 
 	if err := s.Serve(lis); err != nil {
 		log.Fatalf("Failed to serve: %v", err)
