@@ -197,7 +197,7 @@ func main() {
 	opts := []grpc.ServerOption{}
 	s := grpc.NewServer(opts...)
 	blogpb.RegisterBlogServiceServer(s, &server{})
-	
+
 	// register reflection service on grpc server
 	reflection.Register(s)
 
