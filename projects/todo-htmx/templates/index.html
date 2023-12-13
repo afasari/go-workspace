@@ -1,6 +1,7 @@
 <!doctype html>
-<html>
+<html lang="en" xml:lang="en">
     <head>
+        <title>HTMx TODO</title>
         <script src="https://unpkg.com/htmx.org@1.9.5" type="text/javascript"></script>
         <link href="https://cdn.jsdelivr.net/npm/daisyui@3.7.7/dist/full.css" rel="stylesheet" type="text/css" />
         <script src="https://cdn.tailwindcss.com"></script>
@@ -11,7 +12,7 @@
         <form class="grid grid-cols-7 m-4 gap-2">
             <input class="col-span-5 input input-bordered" type="text" name="todo" />
             <button class="btn btn-accent col-span-2" 
-                hx-post="/create" 
+                hx-post="/todo" 
                 hx-target="#todos"
                 hx-swap="innerHTML">
                 Create Todo
@@ -40,9 +41,7 @@
                 </div>
             {{ end }}
             {{ end }}
-
         </div>
-
     </body>
 
 </html>
