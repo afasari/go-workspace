@@ -1,0 +1,1 @@
+/mnt/c/Users/batia/work/other/github/afasari/go-workspace/Projects/graphql/apps/message-service/target/debug/message-service: /mnt/c/Users/batia/work/other/github/afasari/go-workspace/Projects/graphql/apps/message-service/src/main.rs
