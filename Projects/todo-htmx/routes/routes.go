@@ -92,5 +92,6 @@ func SetupAndRun() {
 	mux.HandleFunc("/todo/{id}", deleteTodo).Methods("DELETE")
 	mux.HandleFunc("/todo", createTodo).Methods("POST")
 
+	log.Println("server started at port 5000")
 	log.Fatal(http.ListenAndServe(":5000", mux))
 }
