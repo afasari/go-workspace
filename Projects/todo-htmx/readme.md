@@ -34,17 +34,20 @@ A lightweight, fast Todo application built with Go and HTMX, featuring a clean d
     ```
 
 2. Set up environment variables:
+
    ```bash
    cp .env.example .env
    # Edit .env with your database credentials
     ```
 
 3. Create PostgreSQL database:
+
    ```bash
    createdb todos
     ```
 
 4. Run the application:
+
    ```bash
    go run main.go
     ```
