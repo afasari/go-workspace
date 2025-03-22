@@ -6,74 +6,72 @@ A collection of personal projects built with Go, showcasing various implementati
 
 ### 🌐 Web Development
 
-- [Todo HTMX](Projects/todo-htmx) - Modern Todo app using HTMX and Go
-- [REST API](Projects/rest-api) - RESTful API implementation examples
-- [Web Basics](Projects/web-basics) - Web development fundamentals in Go
+- [Todo HTMX](todo-htmx) - Modern Todo app with HTMX, Go, and PostgreSQL
+  - Features: Real-time updates, Dark theme UI, TailwindCSS
+  - Tech: Go, HTMX, PostgreSQL, TailwindCSS
 
-### 🔄 gRPC
+### 🔄 Microservices
 
-- [Todo gRPC](Projects/todo-grpc) - Todo application with gRPC implementation
-- [gRPC Basics](Projects/grpc-basics) - Basic gRPC service examples
-
-### 🛠️ Tools & Libraries
-
-- [Protobuf Examples](Projects/protobuf) - Protocol Buffers implementation samples
-- [Go Utils](Projects/utils) - Collection of utility functions and helpers
+- [Todo gRPC](todo-grpc) - Todo application with gRPC and Protocol Buffers
+  - Features: gRPC API, Protobuf schemas, CLI client
+  - Tech: Go, gRPC, Protocol Buffers, PostgreSQL
 
 ## 🏗️ Project Structure
 
-go-workspace/
-├── projects/
-│   ├── todo-htmx/
-│   ├── todo-grpc/
-│   ├── rest-api/
-│   └── ...
-└── pkg/
-└── shared libraries
+  ```tree
+  go-workspace/
+  │   ├── todo-htmx/       # HTMX Todo Application
+  │   └── todo-grpc/       # gRPC Todo Service
+  ```
 
 ## 🚦 Getting Started
 
 1. Clone the repository:
 
-    ```bash
-    git clone https://github.com/afasari/go-workspace.git
-    cd go-workspace
-     ```
+   ```bash
+   git clone https://github.com/afasari/go-workspace.git
+   cd go-workspace
+   ```
 
-2. Install dependencies:
-
-    ```bash
-    go mod download
-    ```
-
-3. Navigate to specific project:
+2. Choose a project:
 
    ```bash
-   cd Projects/<project-name>
+   cd todo-htmx
+   # or
+   cd todo-grpc
     ```
+
+3. Follow project-specific README for setup instructions
 
 ## 🛠️ Prerequisites
 
-- Go 1.16 or higher
+- Go 1.20 or higher
+- PostgreSQL 14+
 - Protocol Buffers compiler (for gRPC projects)
-- PostgreSQL (for database projects)
+- Node.js & npm (for web projects)
 
 ## 📖 Documentation
 
-Each project contains its own README with specific instructions and documentation.
+Each project includes:
+
+- Detailed README
+- API documentation
+- Setup instructions
+- Example usage
 
 ## 🤝 Contributing
 
 1. Fork the repository
-2. Create your feature branch ( git checkout -b feature/amazing-feature )
-3. Commit your changes ( git commit -m 'Add some amazing feature' )
-4. Push to the branch ( git push origin feature/amazing-feature )
-5. Open a Pull Request
+2. Create feature branch ( git checkout -b feature/amazing-feature )
+3. Commit changes ( git commit -m 'Add amazing feature' )
+4. Push to branch ( git push origin feature/amazing-feature )
+5. Open Pull Request
 
 ## 📝 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+MIT License - see LICENSE
 
 ## 📬 Contact
 
-Batiar Afas - @afasari
+- GitHub: @afasari
+- LinkedIn: Batiar Afas
