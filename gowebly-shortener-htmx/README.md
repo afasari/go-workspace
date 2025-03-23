@@ -16,14 +16,14 @@ And some words [about the Gowebly CLI](#about-the-gowebly-cli).
 
 Backend:
 
-- Module name in the go.mod file: `todo-htmx-fiber`
-- Go web framework/router: `Fiber`
+- Module name in the go.mod file: `github.com/afasari/go-workspace/gowebly-shortener-htmx`
+- Go web framework/router: `Built-in net/http package`
 - Server port: `7000`
 
 Frontend:
 
-- Package name in the package.json file: `todo-htmx-fiber`
-- Reactivity library: `htmx with hyperscript`
+- Package name in the package.json file: `shortener-htmx`
+- Reactivity library: `htmx with Alpine.js`
 - CSS framework: `Tailwind CSS with daisyUI components`
 
 Tools:
